@@ -1,4 +1,4 @@
-use crate::genmsg;
+use rosrust_codegen_internal::genmsg;
 use proc_macro::TokenStream;
 use quote::quote;
 use std::env;

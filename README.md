@@ -37,6 +37,11 @@ The API is very close to the desired final look.
 
 Integration with [catkin](http://www.ros.org/wiki/catkin) will be handled once a satisfying set of features has been implemented.
 
+## Building this Cargo Workspace
+If your environment has a ROS1 workspace set up, you can likely build with simply `cargo build`.
+
+If you do not have a ROS1 environment set up, you'll need to make sure the submodules are installed and then call `ROSRUST_MSG_PATH=$(pwd) cargo build`. This pulls ROS message definitions from the ros/common_msgs repository which is a submodule.
+
 ## Examples
 
 The API is close to reaching its final form.

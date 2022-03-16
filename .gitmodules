@@ -1,0 +1,3 @@
+[submodule "msg_examples/common_msgs"]
+	path = msg_examples/common_msgs
+	url = https://github.com/ros/common_msgs.git

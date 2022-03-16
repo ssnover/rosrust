@@ -3,7 +3,7 @@ edition = "2018"
 authors = ["Adnan Ademovic <adnanademovic100@gmail.com>"]
 description = "Message generation for rosrust"
 license = "MIT"
-name = "rosrust_codegen"
+name = "rosrust_codegen_internal"
 readme = "README.md"
 repository = "https://github.com/adnanademovic/rosrust"
 version = "0.9.6"
@@ -20,10 +20,3 @@ hex = "0.4.3"
 [dependencies.ros_message]
 path = "../ros_message"
 version = "0.1.0"
-
-[dependencies.rosrust_codegen_internal]
-path = "../rosrust_codegen_internal"
-version = "0.9.6"
-
-[lib]
-proc-macro = true

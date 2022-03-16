@@ -8,6 +8,7 @@ fn main() {
     rerun_if_env_changed("OUT_DIR");
     rerun_if_env_changed("CMAKE_PREFIX_PATH");
     rerun_if_env_changed("ROSRUST_MSG_PATH");
+    rerun_if_env_changed("ROS_PACKAGE_PATH");
 
     let cmake_paths = env::var("CMAKE_PREFIX_PATH")
         .unwrap_or_default()
@@ -19,6 +20,11 @@ fn main() {
         .split(':')
         .filter_map(append_src_folder)
         .collect::<Vec<String>>();
+    let package_paths = env::var("ROS_PACKAGE_PATH")
+        .unwrap_or_default()
+        .split(':')
+        .map(|path| path.to_string() )
+        .collect::<Vec<String>>();
     let extra_paths = env::var("ROSRUST_MSG_PATH")
         .unwrap_or_default()
         .split(':')
@@ -27,6 +33,7 @@ fn main() {
     let paths = cmake_paths
         .iter()
         .chain(cmake_alt_paths.iter())
+        .chain(package_paths.iter())
         .chain(extra_paths.iter())
         .collect::<Vec<_>>();
     for path in &paths {

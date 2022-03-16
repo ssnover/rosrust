@@ -1,15 +1,6 @@
 #![recursion_limit = "1024"]
 
-extern crate proc_macro;
-
-mod alerts;
-mod error;
-mod genmsg;
-mod helpers;
-mod msg;
-mod output_layout;
 mod rosmsg_include;
-
 use proc_macro::TokenStream;
 
 #[proc_macro]
